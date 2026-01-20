@@ -1,0 +1,444 @@
+/* 2026-01-20 Starting CSS */
+
+/*
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px) saturate(100%) contrast(100%);
+    -webkit-backdrop-filter: blur(10px) saturate(100%) contrast(100%);
+    
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4) inset,0 0 0 1px rgba(255, 255, 255, 0.4),0 8px 32px rgba(0, 0, 0, calc(0.25 * 1));
+    display: grid; place-items: center; cursor: pointer; outline: 0;
+    transition: all 0.2s ease-out;
+*/
+
+/* --- Glass Effect CSS Custom Properties (Defaults) --- */
+:root {
+    --glass-blur: 10px;
+    --glass-saturation: 100%;
+    --glass-contrast: 100%;
+    --glass-size: 22rem;
+    --glass-border-width: 1px;
+    --glass-icon-color: #ffffff;
+    --glass-tint-color: 255, 255, 255; /* Stored as R,G,B values */
+    --glass-tint-alpha: 0.15;
+    --shadow-opacity: 1;
+}
+
+/* --- Glass Element Styling --- from https://github.com/aakhalidhruv28/Liquid-Glass-Effect */
+.glass, .glass-link {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: var(--glass-size); height: var(--glass-size);
+    border-radius: 50%; /* Fixed border-radius for a consistent look */
+    
+    /* The core of the effect */
+    background: rgba(var(--glass-tint-color), var(--glass-tint-alpha));
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation)) contrast(var(--glass-contrast));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation)) contrast(var(--glass-contrast));
+    
+    border: var(--glass-border-width) solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4) inset,
+                0 0 0 1px rgba(255, 255, 255, 0.4),
+                0 8px 32px rgba(0, 0, 0, calc(0.25 * var(--shadow-opacity)));
+    display: grid; place-items: center; cursor: pointer; outline: 0;
+    transition: all 0.2s ease-out;
+}
+.glass-link { text-decoration: none; }
+.glass-link:hover { transform: translate(-50%, -50%) scale(1.05); }
+.glass.hidden { opacity: 0; pointer-events: none; transform: translate(-50%, -50%) scale(0); }
+
+/* '+' Icon Styling */
+.glass::before, .glass::after, .glass-link::before, .glass-link::after {
+    content: ""; position: absolute; width: 40%; height: 8px;
+    background: var(--glass-icon-color); border-radius: 8px;
+}
+.glass::after, .glass-link::after { transform: rotate(90deg); }
+
+/* From Radiant Theme - background circle gradient */
+/*
+media="(min-width: 40rem)" {
+    #main-outlet::before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        width: 500px;
+        height: 500px;
+        border-radius: 2000px;
+        background: linear-gradient(330deg, rgba(255, 74, 158, 0) 45%, rgba(255, 74, 158, 0.4) 100%);
+        background: linear-gradient(200deg, rgba(255, 74, 158, 0) 45%, rgba(40, 13, 194, 0.068) 100%);
+        left: 4px;
+        top: 500px;
+    }
+}
+*/
+
+
+/*
+div#main-outlet .btn-default {
+    outline: 1px dashed #009a49 !important;
+    background: rgba(0, 0, 0, 0) !important;
+}
+*/
+
+/*
+div#main-outlet button:hover,
+div#main-outlet button:focus,
+div#main-outlet button:active {
+    outline: 1px dashed #009a49 !important;
+    background: transparent !important;
+}
+*/
+
+/*
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active {
+    outline: 1px dashed #009a49 !important;
+    background: transparent !important;
+}
+*/
+
+/*
+div#main-outlet button:hover,
+div#main-outlet button:focus,
+div#main-outlet button:active {
+    outline: 1px dashed #009a49 !important;
+    background: transparent !important;
+}
+*/
+
+div#main-outlet .show-replies:hover,
+div#main-outlet .show-replies:focus,
+div#main-outlet .show-replies:active,
+div#main-outlet nav.post-controls .show-replies[aria-expanded=true],
+div#main-outlet nav.post-controls .show-replies[aria-expanded=true]:hover,
+div#main-outlet nav.post-controls .show-replies[aria-expanded=true]:focus,
+div#main-outlet nav.post-controls .show-replies[aria-expanded=true]:active,
+div#main-outlet .embedded-posts.bottom .collapse-up:hover,
+div#main-outlet .embedded-posts.bottom .collapse-up:focus,
+div#main-outlet .embedded-posts.bottom .collapse-up:active,
+div#main-outlet .embedded-posts.bottom .collapse-up[aria-expanded=true]:hover,
+div#main-outlet .embedded-posts.bottom .collapse-up[aria-expanded=true]:focus,
+div#main-outlet .embedded-posts.bottom .collapse-up[aria-expanded=true]:active {
+    background-color: aliceblue !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .15) !important;
+    color: var(--tertiary) !important;
+    outline: 1px dotted var(--tertiary) !important;
+    border: none !important;
+}
+
+
+/*
+.embedded-posts.bottom>div .row .topic-body .topic-meta-data .post-link-arrow {
+    bottom: .5em;
+    right: 1.5em;
+}
+*/
+
+.embedded-posts.bottom {
+    max-width: calc(95% - 66px);
+    margin: 0 auto;
+    padding-bottom: 25px;
+}
+
+/*
+.d-header #site-logo {
+    border-radius: 4px !important;
+    box-shadow: 0 1.36px 8.896px #ffffff, 0 0 1px !important;
+}
+*/
+
+.btn-link {
+    padding: 5px 10px;
+}
+
+/*
+body.has-sidebar-page #main-outlet-wrapper {
+    gap: 0;
+}
+*/
+
+/*
+.sidebar-wrapper {
+    background-color: #151521;
+}
+*/
+
+.sidebar-wrapper .sidebar-sections,
+.sidebar-section-wrapper .sidebar-section-header-wrapper:focus-within {
+    /* padding-right: 0 !important; */
+    /* background-color: #151521 !important; */
+    background-color: transparent !important;
+}
+
+
+div.sidebar-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(30% at 10% 50%);
+    
+    /* For Darkest Themes */
+    /* background: linear-gradient(#005090, #6d0025); */
+
+    /* For Medium to Dark Themes */
+    /* background: linear-gradient(#2196f3, #e91e63); */
+
+    /* For Light Themes */
+    background: linear-gradient(#89e2ff, #ffa2c2);
+}
+
+.sidebar-section-wrapper {
+    border-bottom: none;
+}
+
+
+.sidebar-section-wrapper .sidebar-section-header-wrapper {
+margin-bottom: .25rem;
+}
+
+.sidebar-section-wrapper .sidebar-section-header {
+    /*
+    flex: 1 1 auto;
+    align-items: center;
+    min-width: 0;
+    padding: 0;
+    */
+    font-size: unset !important;
+}
+
+/*
+.sidebar-section-wrapper .sidebar-section-header {
+    font-size: unset !important;
+}
+*/
+
+.sidebar-section-wrapper .sidebar-section-content {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    /* padding-right: var(--d-sidebar-row-horizontal-padding); */
+}
+
+.sidebar-wrapper {
+padding-top: var(--main-outlet-padding-top);
+height: calc(var(--composer-vh, 1dvh) * 100 - var(--main-outlet-offset, 0px) - var(--main-outlet-padding-top));
+}
+
+.sidebar-wrapper .sidebar-container {
+    border-right: none;
+    z-index: 1;
+    background-color: transparent !important;
+}
+
+.sidebar-section-link-wrapper {
+    /* padding: 0.3em var(--d-sidebar-row-horizontal-padding); */
+    /* padding: .3em var(--d-sidebar-row-horizontal-padding) .3em 0; */
+   /* margin: .3em .5em .3em 0; */
+}
+
+
+
+.container-test .card {
+    position: relative;
+    width: 280px;
+    height: 450px;
+    margin: 30px;
+    /* box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5) !important; */
+    box-shadow: 0px 2px 5px rgb(0 0 0 / 25%) !important;
+        box-shadow: 1px 2px 2px rgb(0 0 0 / 20%) !important;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25) !important;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/*
+.sidebar-wrapper .svg-icon,
+.sidebar-wrapper .svg-icon-title,
+.sidebar-wrapper .sidebar-sections__back-to-forum svg,
+.sidebar-wrapper .sidebar-sections__back-to-forum,
+.sidebar-panel-header__row,
+.sidebar-section-link-wrapper .sidebar-section-link,
+.sidebar-wrapper .sidebar-section-header-text,
+.sidebar-section-wrapper .sidebar-section-header,
+.sidebar-section-wrapper .sidebar-section-header-caret .d-icon,
+.sidebar-section-wrapper .sidebar-section-header-caret .d-icon-angle-down {
+    font-weight: bold;
+    color: #fff !important;
+    fill: #fff !important
+    
+}
+*/
+
+.sidebar-section-header {
+    border-radius: 4px !important;
+    /* box-shadow: 0 1.36px 8.896px #c4b59d, 0 0 1px !important; */
+    /* padding: 0.2em .3em; */
+    padding: .2em .7em !important;
+
+    /* box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5) !important; */
+    box-shadow: 0px 2px 5px rgb(0 0 0 / 25%) !important;
+            box-shadow: 1px 2px 2px rgb(0 0 0 / 20%) !important;
+                box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25) !important;
+    /* background: rgba(255, 255, 255, 0.05) !important; */
+    overflow: hidden !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.5) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(5px) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
+    
+    /* z-index:9; */
+    /*
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+    will-change: transform;
+    */
+}
+
+/*
+.sidebar-section.sidebar-section-wrapper.sidebar-section--expanded,
+.sidebar-section .sidebar-section-wrapper .sidebar-section--expanded,
+*/
+
+
+/* .sidebar-section-wrapper .sidebar-section-header.sidebar-section-header-collapsable:hover */
+
+  .sidebar-section-wrapper .sidebar-section-header.sidebar-section-header-collapsable:hover,
+.sidebar-section-header:active,
+.sidebar-section-header:hover
+/* .sidebar-section-header:focus */ {
+    border-radius: 4px !important;
+    /* box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5) !important; */
+    box-shadow: 0px 2px 5px rgb(0 0 0 / 25%) !important;
+            box-shadow: 1px 2px 2px rgb(0 0 0 / 20%) !important;
+                box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25) !important;
+ /* background: rgba(255, 255, 255, 0.2) !important; */
+    overflow: hidden !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.5) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(5px) !important;
+color: var(--d-nav-color--active) !important;
+    transform: perspective(1000px) rotateX(4deg) rotateY(352deg) scale3d(1, 1, 1);
+    will-change: transform;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+
+.sidebar-section.sidebar-section-wrapper .sidebar-section-header.sidebar-section-header-collapsable:hover .sidebar-section-header-text,
+.sidebar-section.sidebar-section-wrapper .sidebar-section-header.sidebar-section-header-collapsable:hover .sidebar-section-header-caret .d-icon,
+.sidebar-section.sidebar-section-wrapper.sidebar-section--expanded .sidebar-section-header-text,
+.sidebar-section.sidebar-section-wrapper.sidebar-section--expanded .sidebar-section-header-caret .d-icon {
+    color: var(--d-nav-color--active) !important;
+}
+
+
+/*
+.sidebar-section-header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#2196f3, #e91e63);
+    clip-path: circle(20% at 10% 10%);
+}
+*/
+
+/*
+.sidebar-section-link-wrapper .sidebar-section-link {
+    border-radius: 4px !important;
+    height: 1.5em;
+    padding: 0.5em 1em;
+    padding-right: 0;
+    padding-left: .2em;
+}
+*/
+
+/*
+.sidebar-section-link-wrapper .sidebar-section-link--active,
+.sidebar-section-link-wrapper .sidebar-section-link.active,
+.sidebar-section-link-wrapper .sidebar-section-link.exact-url-match {
+        background: rgba(255, 255, 255, 0.05) !important;
+}
+*/
+
+
+/* .sidebar-section-link-wrapper .sidebar-section-link.exact-url-match, */
+.sidebar-section-link-wrapper .sidebar-section-link,
+/* .discourse-touch .sidebar-custom-sections, */
+.discourse-touch .sidebar-custom-sections,
+/* .btn-flat, */
+.btn-flat,
+/* .json-editor-btn-collapse, */
+.json-editor-btn-collapse {
+    /* box-shadow: 20px 20px 50px rgba(0, 0, 0, 0) !important; */
+    /* border-top: 1px solid transparent !important; */
+    /* border-left: 1px solid transparent !important; */
+        border: 1px solid transparent !important;
+}
+
+/* .sidebar-section-link-wrapper .sidebar-section-link.exact-url-match, */
+/* .sidebar-section-link-wrapper .sidebar-section-link--active, */
+.sidebar-section-link-wrapper.--hovering .sidebar-section-link,
+.sidebar-section-link-wrapper .sidebar-section-link.active,
+.sidebar-section-link-wrapper .sidebar-section-link:hover,
+.discourse-touch .sidebar-custom-sections a:active,
+.discourse-touch .sidebar-custom-sections a:hover,
+.btn-flat a:active,
+.btn-flat a:hover,
+.json-editor-btn-collapse a:active,
+.json-editor-btn-collapse a:hover {
+    /* box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5) !important; */
+    box-shadow: 0px 2px 5px rgb(0 0 0 / 25%) !important;
+            box-shadow: 1px 2px 2px rgb(0 0 0 / 20%) !important;
+                box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25) !important;
+      background: rgba(255, 255, 255, 0.05) !important;
+      color: var(--d-nav-color--active) !important;
+    overflow: hidden !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.5) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(5px) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.sidebar-section-link-wrapper.--hovering .sidebar-section-link,
+.sidebar-section-link-wrapper .sidebar-section-link.active,
+.sidebar-section-link-wrapper .sidebar-section-link:hover,
+.discourse-touch .sidebar-custom-sections a:active,
+.discourse-touch .sidebar-custom-sections a:hover,
+.btn-flat a:active,
+.btn-flat a:hover,
+.json-editor-btn-collapse a:active,
+.json-editor-btn-collapse a:hover {
+    /*
+    color: var(--d-nav-color--active) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    background: none !important;
+    */
+}
+
+
+
+
+
+
+:root {
+    --d-sidebar-row-height: 1.5em;
+    --d-sidebar-active-font-weight: normal;
+    --sidebar-section-wrapper-padding: ;
+}
