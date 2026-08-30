@@ -163,7 +163,16 @@ button.sidebar-section-header:focus {
     border: 1px solid transparent !important;
 }
 
+
+
+
+
+
+
+
+.sidebar-section-link-wrapper .sidebar-section-link.exact-url-match,
 .sidebar-section-link-wrapper.--hovering .sidebar-section-link,
+.sidebar-section-link-wrapper .sidebar-section-link--active,
 .sidebar-section-link-wrapper .sidebar-section-link.active,
 .sidebar-section-link-wrapper .sidebar-section-link:hover,
 .discourse-touch .sidebar-custom-sections a:active,
