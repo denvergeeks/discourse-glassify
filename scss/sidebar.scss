@@ -60,7 +60,7 @@ div.sidebar-wrapper::after {
 
 .sidebar-section-wrapper .sidebar-section-header-wrapper {
     margin-bottom: .25rem;
-    padding-right: 1rem;
+    padding-right: 0;
 }
 
 .sidebar-section-wrapper .sidebar-section-header {
@@ -68,6 +68,20 @@ div.sidebar-wrapper::after {
 }
 
 .sidebar-section-wrapper .sidebar-section-content {
+    margin-left: .5em;
+    padding-right: 1.5em;
+}
+
+.sidebar-sections.admin-panel .sidebar-section-wrapper .sidebar-section-header-wrapper {
+    margin-bottom: .25rem;
+    padding-right: 1rem;
+}
+
+.sidebar-sections.admin-panel .sidebar-section-wrapper .sidebar-section-header {
+    font-size: unset !important;
+}
+
+.sidebar-sections.admin-panel .sidebar-section-wrapper .sidebar-section-content {
     margin-left: .5em;
     padding-right: 1.5em;
 }
