@@ -21,13 +21,13 @@ div#main-outlet .embedded-posts.bottom .collapse-up[aria-expanded=true]:active {
 }
 
 .embedded-posts.bottom {
-    max-width: calc(95% - 66px);
-    margin: 0 auto;
-    padding-bottom: 25px;
+    max-width: calc(95% - 66px) !important;
+    margin: 0 auto !important;
+    padding-bottom: 25px !important;
 }
 
 .btn-link {
-    padding: 5px 10px;
+    padding: 5px 10px !important;
 }
 
 .sidebar-wrapper .sidebar-sections,
@@ -36,13 +36,13 @@ div#main-outlet .embedded-posts.bottom .collapse-up[aria-expanded=true]:active {
 }
 
 div.sidebar-wrapper::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    clip-path: circle(30% at 10% 50%);
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    clip-path: circle(30% at 10% 50%) !important;
     
     /* For Darkest Themes */
     /* background: linear-gradient(#005090, #6d0025); */
@@ -51,16 +51,16 @@ div.sidebar-wrapper::after {
     /* background: linear-gradient(#2196f3, #e91e63); */
 
     /* For Light Themes */
-    background: linear-gradient(#89e2ff, #ffa2c2);
+    background: linear-gradient(#89e2ff, #ffa2c2) !important;
 }
 
 .sidebar-section-wrapper {
-    border-bottom: none;
+    border-bottom: none !important;
 }
 
 .sidebar-section-wrapper .sidebar-section-header-wrapper {
-    margin-bottom: .25rem;
-    padding-right: 0;
+    margin-bottom: .25rem !important;
+    padding-right: 0 !important;
 }
 
 .sidebar-section-wrapper .sidebar-section-header {
@@ -68,13 +68,13 @@ div.sidebar-wrapper::after {
 }
 
 .sidebar-section-wrapper .sidebar-section-content {
-    margin-left: 1em;
-    padding-right: 1em;
+    margin-left: 1em !important;
+    padding-right: 1em !important;
 }
 
 .sidebar-sections.admin-panel .sidebar-section-wrapper .sidebar-section-header-wrapper {
-    margin-bottom: .25rem;
-    padding-right: 1rem;
+    margin-bottom: .25rem !important;
+    padding-right: 1rem !important;
 }
 
 .sidebar-sections.admin-panel .sidebar-section-wrapper .sidebar-section-header {
@@ -82,18 +82,17 @@ div.sidebar-wrapper::after {
 }
 
 .sidebar-sections.admin-panel .sidebar-section-wrapper .sidebar-section-content {
-    /* margin-left: 1em; */
-    padding-right: 1.5em;
+    padding-right: 1.5em !important;
 }
 
 .sidebar-wrapper {
-    padding-top: var(--main-outlet-padding-top);
-    height: calc(var(--composer-vh, 1dvh) * 100 - var(--main-outlet-offset, 0px) - var(--main-outlet-padding-top));
+    padding-top: var(--main-outlet-padding-top) !important;
+    height: calc(var(--composer-vh, 1dvh) * 100 - var(--main-outlet-offset, 0px) - var(--main-outlet-padding-top)) !important;
 }
 
 .sidebar-wrapper .sidebar-container {
-    border-right: none;
-    z-index: 1;
+    border-right: none !important;
+    z-index: 1 !important;
     background-color: transparent !important;
 }
 
@@ -157,8 +156,8 @@ button.sidebar-section-header:focus {
     border-left: 1px solid rgba(255, 255, 255, 0.5) !important;
     backdrop-filter: blur(5px) !important;
     color: var(--d-nav-color--active) !important;
-    transform: perspective(1000px) rotateX(4deg) rotateY(352deg) scale3d(1, 1, 1);
-    will-change: transform;
+    transform: perspective(1000px) rotateX(4deg) rotateY(352deg) scale3d(1, 1, 1) !important;
+    will-change: transform !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
     border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
